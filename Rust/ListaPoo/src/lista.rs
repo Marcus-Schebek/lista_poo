@@ -11,7 +11,7 @@ impl ListaEncadeada {
 
     pub fn insere(&mut self, value: i32) {
         let mut new_node = Box::new(Node::new(value));
-        new_node.next = self.inicio.take();
+        new_node.next = self.inicio.take(); // Função take()serve para zerar o espaço em do nó, e depois aloca o mesmo com o novo valor no final
         self.inicio = Some(new_node);
     }
 
@@ -37,7 +37,7 @@ impl ListaEncadeada {
     }
 
     pub fn primeiro(&self) -> Option<i32> {
-        self.inicio.as_ref().map(|node| node.value)
+        Some(self.inicio.as_ref()?.get_value())
     }
 
     pub fn ultimo(&self) -> Option<i32> {
