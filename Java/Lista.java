@@ -14,6 +14,9 @@ public abstract class Lista{
         this.size = v;
     }
     public abstract void insere(int value);
+    public void retira() {
+        throw new UnsupportedOperationException("retira() without a parameter is not supported");
+    }
     public abstract void retira(int value); //Modificação dos requisitos, aqui ele fará uma procura pelo value e retirará da lista, caso não encontre só será retornado um erro;
     public abstract int primeiro();
     public abstract int ultimo();
